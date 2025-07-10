@@ -1,17 +1,66 @@
-gsap.registerPlugin(ScrollTrigger);
+const carousel = document.querySelector('.carousel');
+const leftArrow = document.querySelector('.left-arrow');
+const rightArrow = document.querySelector('.right-arrow');
+const slideGap = 16;
 
-const features = document.querySelectorAll('.feature');
+let index = 1;
+let isAnimating = false;
 
-features.forEach((el) => {
-  gsap.to(el, {
-    scrollTrigger: {
-      trigger: el,
-      start: 'top 80%',    
-      toggleActions: 'play none none none'
-    },
-    y: 0,
-    opacity: 1,
-    duration: 0.8,
-    ease: 'power4.out'
+const slides = Array.from(carousel.children);
+const firstClone = slides[0].cloneNode(true);
+const lastClone = slides[slides.length - 1].cloneNode(true);
+carousel.insertBefore(lastClone, slides[0]);
+carousel.appendChild(firstClone);
+
+const totalItems = carousel.children.length;
+
+function getSlideWidth() {
+  return carousel.children[0].offsetWidth + slideGap;
+}
+
+function updateCarousel(instant = false) {
+  const offset = index * getSlideWidth();
+  carousel.style.transition = instant ? 'none' : 'transform 0.5s ease';
+  carousel.style.transform = `translateX(-${offset}px)`;
+}
+
+function moveTo(direction) {
+  if (isAnimating) return;
+  isAnimating = true;
+
+  index += direction;
+  updateCarousel();
+
+  carousel.addEventListener('transitionend', () => {
+    if (index === totalItems - 1) {
+      index = 1;
+      updateCarousel(true);
+    } else if (index === 0) {
+      index = totalItems - 2;
+      updateCarousel(true);
+    }
+
+    setTimeout(() => {
+      isAnimating = false;
+    }, 20);
+  }, { once: true });
+}
+
+leftArrow.addEventListener('click', () => moveTo(-1));
+rightArrow.addEventListener('click', () => moveTo(1));
+window.addEventListener('resize', () => updateCarousel(true));
+
+updateCarousel(true);
+
+
+// faq 
+ const details = document.querySelectorAll('.faq-content details');
+  details.forEach((targetDetail) => {
+    targetDetail.addEventListener('click', () => {
+      details.forEach((detail) => {
+        if (detail !== targetDetail) {
+          detail.removeAttribute('open');
+        }
+      });
+    });
   });
-});

@@ -2,122 +2,210 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title data-i18n="">Document</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title data-i18n="title">Web Agency</title>
     <link rel="stylesheet" href="./assets/css/style.css" />
 </head>
 
 <body>
     <header>
-        <nav class="navbar">
-            <div class="logo">
-                <a href="/">Debug</a>
-            </div>
-            <ul class="nav-links">
-                <li><a data-i18n="services" href="/services.html">Services</a></li>
-                <li><a data-i18n="" href="/contact.html">Contact</a></li>
-                <li>
-                    <select id="lang-select">
-                        <option value="az">AZ</option>
-                        <option value="en">EN</option>
-                        <option value="ru">RU</option>
-                    </select>
-                </li>
+        <img src="./assets/images/blurryBackground.png" alt="Gradient" class="bg-blur" draggable="false" />
+        <nav>
+            <div class="logo">Logo</div>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">How it Works</a></li>
+                <li><a href="#">Services</a></li>
             </ul>
+            <div>
+                <select id="lang-select">
+                    <option value="az">AZ</option>
+                    <option value="en">EN</option>
+                </select>
+            </div>
         </nav>
+        <div class="hero">
+            <h1 data-i18n="">Awesome UI Dark Template for Webflow Agency</h1>
+            <button>Get in Touch</button>
+        </div>
     </header>
-    <main>
-        <section class="hero">
-            <h1 data-i18n="hello_text" id="animated-text">Say Hello To Your New Site</h1>
-            <div>img </div>
-        </section>
 
-        <section class="features">
-            <div class="feature">
-                <div class="feature__img">
-                    <img src="./assets/images/webDesign.jpg" alt="Website Creation">
-                </div>
-                <div class="feature__text">
-                    <h2 data-i18n="">Custom Website Creation</h2>
-                    <p data-i18n="">We build responsive, SEO‑friendly websites tailored to your brand’s needs.</p>
-                </div>
+    <section class="services">
+        <h2>What We Do</h2>
+        <div class="service-cards">
+            <div class="card">
+                <img src="./assets/images/webDesign.png" alt="Web Design" />
+                <p>UI/UX Design</p>
+                <p>
+                    From concept to launch, we create
+                    stunning, user-centric websites
+                    that elevate your brand and
+                    engage your audience.
+                </p>
             </div>
-
-            <div class="feature feature--reverse">
-                <div class="feature__img">
-                    <img src="./assets/images/secure.jpeg" alt="Secure Applications">
-                </div>
-                <div class="feature__text">
-                    <h2 data-i18n="">Secure App Development</h2>
-                    <p data-i18n="">From backend APIs to mobile apps, security is baked into every line of code.</p>
-                </div>
+            <div class="card">
+                <img src="./assets/images/webDevelopment.png" alt="Web Development" />
+                <p>Responsive Design</p>
+                <p>
+                    From concept to launch, we create
+                    stunning, user-centric websites
+                    that elevate your brand and
+                    engage your audience.
+                </p>
             </div>
-
-            <div class="feature">
-                <div class="feature__img">
-                    <img src="./assets/images/AR.png" alt="AR Technologies">
-                </div>
-                <div class="feature__text">
-                    <h2 data-i18n="">AR & Immersive Experiences</h2>
-                    <p>Leverage augmented reality to engage your users in entirely new ways.</p>
-                </div>
+            <div class="card last">
+                <img src="" alt="E-commerce Solutions" />
+                <p> E-commerce Solutions</p>
+                <p>
+                    From concept to launch, we create
+                    stunning, user-centric websites
+                    that elevate your brand and
+                    engage your audience.
+                </p>
+                <img src="" alt="E-commerce Solutions picture">
             </div>
-
-            <div class="feature feature--reverse">
-                <div class="feature__img">
-                    <img src="./assets/images/support.png" alt="Ongoing Support">
-                </div>
-                <div class="feature__text">
-                    <h2>Ongoing Maintenance & Support</h2>
-                    <p>We ensure your digital products stay up‑to‑date, secure, and performing.</p>
-                </div>
-            </div>
-        </section>
-    </main>
-    <footer class="site-footer">
-        <div class="footer-container">
-            <div class="footer-col">
-                <h3>YourCompany</h3>
-                <p>Building secure web & mobile experiences, immersive AR, and more.</p>
-            </div>
-            <div class="footer-col">
-                <h4>Services</h4>
-                <ul>
-                    <li><a href="/services.html#web">Web Development</a></li>
-                    <li><a href="/services.html#apps">App Security</a></li>
-                    <li><a href="/services.html#ar">AR Tech</a></li>
-                    <li><a href="/services.html#support">Support</a></li>
-                </ul>
-            </div>
-            <div class="footer-col">
-                <h4>Quick Links</h4>
-                <ul>
-                    <li><a href="/">Home</a></li>
-                    <li><a href="/about.html">About Us</a></li>
-                    <li><a href="/contact.html">Contact</a></li>
-                    <li><a href="/careers.html">Careers</a></li>
-                </ul>
-            </div>
-            <div class="footer-col">
-                <h4>Contact</h4>
-                <p>Email: <a href="mailto:info@yourcompany.com">info@yourcompany.com</a></p>
-                <p>Phone: <a href="tel:+1234567890">+994 50 658 69 69</a></p>
-                <div class="social-icons">
-                    <a href="#" aria-label="Twitter"><img src="icons/twitter.svg" alt=""></a>
-                    <a href="#" aria-label="LinkedIn"><img src="icons/linkedin.svg" alt=""></a>
-                    <a href="#" aria-label="GitHub"><img src="icons/github.svg" alt=""></a>
-                </div>
+            <div class="card">Text here</div>
+            <div class="card">Custom Development</div>
+            <div class="card bottom">
+                <img src="" alt="Webflow" />
+                <p> Webflow</p>
+                <p>
+                    From concept to launch, we create
+                    stunning, user-centric websites
+                    that elevate your brand and
+                    engage your audience.
+                </p>
+                <img src="" alt="Webflow picture">
             </div>
         </div>
-        <div class="footer-bottom">
-            <p>© 2025 YourCompany. All rights reserved.</p>
+    </section>
+
+    <section class="portfolio">
+        <img src="./assets/images/abstract.png" alt="Portfolio Background" class="bg-abstract" draggable="false" />
+
+        <div class="portfolio-header">
+            <div class="arrow left-arrow">&#8592;</div>
+            <div class="portfolio-title">
+                <h2>Check our Work</h2>
+                <p>
+                    Take a look at some of our recent projects to see how we've helped
+                    businesses like yours succeed online.
+                </p>
+            </div>
+            <div class="arrow right-arrow">&#8594;</div>
+        </div>
+
+        <div class="carousel-wrapper">
+            <div class="carousel">
+                <div class="carousel-img"><img src="./assets/images/secure.jpeg" alt="Secure" /></div>
+                <div class="carousel-img"><img src="./assets/images/AR.png" alt="AR" /></div>
+                <div class="carousel-img"><img src="./assets/images/support.png" alt="Support" /></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="pricing">
+        <div class="pricing-header">
+            <div class="pricing-header-box">
+                <h2>Pricing</h2>
+                <p>Take a look at some of our recent projects
+                    to see how we ve helped businesses like
+                    yours succeed online.
+                </p>
+            </div>
+            <div class="pricing-btn-box">
+                <h2>Let’s Schedule
+                    a Meeting</h2>
+                <button>Schedule Meeting</button>
+            </div>
+        </div>
+        <div class="pricing-main-box">
+            <h2>Unlimited Services</h2>
+            <p>Take a look at some of our recent projects to see how
+                we ve helped businesses like yours succeed online.</p>
+            <div class="pricing-options">
+                <ul>
+                    <li>Unlimited requests</li>
+                    <li>Unlimited revisions</li>
+                    <li>Unlimited users</li>
+                </ul>
+                <ul>
+                    <li>Unlimited projects</li>
+                    <li>Unlimited storage</li>
+                    <li>Unlimited support</li>
+                </ul>
+            </div>
+            <div class="pricing-price-box">
+                <h3>$36969</h3>
+            </div>
+        </div>
+    </section>
+
+    <section class="faq">
+        <div class="faq-title">
+            <h2>Frequently Asked Questions</h2>
+        </div>
+        <div class="faq-content">
+            <details>
+                <summary>How can I contact Inkyy Team?</summary>
+                <p>You can reach us through our contact form or email: hello@inkyy.com</p>
+            </details>
+            <details>
+                <summary>What services do you offer?</summary>
+                <p>Web design, development, maintenance, and more.</p>
+            </details>
+            <details>
+                <summary>Do you provide website maintenance?</summary>
+                <p>Yes, ongoing maintenance is part of our services.</p>
+            </details>
+        </div>
+
+    </section>
+
+    <section class="contact">
+        <img src="./assets/images/abstract-contact.png" alt="abstract-contact" class="bg-abstract-contact"
+            draggable="false" />
+        <h2>Let’s Get in Touch</h2>
+        <form id="contact-form">
+            <label for="email">email</label>
+            <input id="email" type="email" name="email" placeholder="example@mail.com" required autocomplete="email" />
+
+            <label for="name">name</label>
+            <input id="name" type="text" name="name" placeholder="Full Name" required autocomplete="name" />
+
+            <label for="message">message</label>
+            <textarea id="message" name="message" placeholder="Write your message..." required
+                autocomplete="off"></textarea>
+
+            <button type="submit">Send</button>
+        </form>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-left-box">
+                <h3>Logo</h3>
+                <p>Ready to elevate your online presence?
+                    Contact us today to discuss your project and
+                    discover how we can bring your vision to life.</p>
+                <p>Made with love powered by inkyy.com</p>
+            </div>
+            <div class="footer-right-box">
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">How it Works</a></li>
+                    <li><a href="#">Services</a></li>
+                </ul>
+                <div></div>
+            </div>
         </div>
     </footer>
-    <script src="./assets/js/i18n.js" defer></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
     <script src="./assets/js/script.js"></script>
+    <script src="./assets/js/i18n.js"></script>
 </body>
 
 </html>
