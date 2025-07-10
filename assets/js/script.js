@@ -1,6 +1,13 @@
 const carousel = document.querySelector('.carousel');
 const leftArrow = document.querySelector('.left-arrow');
 const rightArrow = document.querySelector('.right-arrow');
+
+const nav = document.querySelector('nav');
+const btn = document.querySelector('.menu-toggle');
+const navLinks = nav.querySelectorAll('ul li a');
+
+const details = document.querySelectorAll('.faq-content details');
+
 const slideGap = 16;
 
 let index = 1;
@@ -54,13 +61,39 @@ updateCarousel(true);
 
 
 // faq 
- const details = document.querySelectorAll('.faq-content details');
-  details.forEach((targetDetail) => {
-    targetDetail.addEventListener('click', () => {
-      details.forEach((detail) => {
-        if (detail !== targetDetail) {
-          detail.removeAttribute('open');
-        }
-      });
+details.forEach((targetDetail) => {
+  targetDetail.addEventListener('click', () => {
+    details.forEach((detail) => {
+      if (detail !== targetDetail) {
+        detail.removeAttribute('open');
+      }
     });
   });
+});
+
+
+// menu toggle
+
+// Toggle menu on hamburger click
+btn.addEventListener('click', () => {
+  nav.classList.toggle('open');
+  const expanded = nav.classList.contains('open');
+  btn.setAttribute('aria-label', expanded ? 'Close menu' : 'Open menu');
+});
+
+// Close menu when any nav link is clicked
+navLinks.forEach(link => {
+  link.addEventListener('click', () => {
+    nav.classList.remove('open');
+    btn.setAttribute('aria-label', 'Open menu');
+  });
+});
+
+// Close menu when clicking outside of nav
+document.addEventListener('click', (e) => {
+  const isClickInside = nav.contains(e.target) || btn.contains(e.target);
+  if (!isClickInside) {
+    nav.classList.remove('open');
+    btn.setAttribute('aria-label', 'Open menu');
+  }
+});

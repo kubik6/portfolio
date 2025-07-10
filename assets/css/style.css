@@ -87,6 +87,9 @@ button {
     margin-top: 1rem;
 }
 
+
+/* sevice section */
+
 .services {
     width: 90%;
     margin: auto;
@@ -305,48 +308,49 @@ button {
 }
 
 .faq-content {
-  /* max-width: 600px; */
-  width: 50%;
-  margin: auto;
+    /* max-width: 600px; */
+    width: 50%;
+    margin: auto;
 
 }
 
 details {
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  padding: 20px 20px;
-  margin-bottom: 20px;
-  background-color: black;
-  color: white;
-  transition: all 0.3s ease;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px 20px;
+    margin-bottom: 20px;
+    background-color: black;
+    color: white;
+    transition: all 0.3s ease;
 }
 
 summary {
-   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-size: 1.1rem;
-  font-weight: 600;
-  cursor: pointer;
-  list-style: none; 
-  position: relative;
-  padding-right: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    list-style: none;
+    position: relative;
+    padding-right: 20px;
 }
 
 summary::-webkit-details-marker {
-  display: none; /* hide native arrow */
+    display: none;
+    /* hide native arrow */
 }
 
 /* Icon (+/-) */
 summary::after {
-  content: '+';
-  font-size: 1.2rem;
-  transition: transform 0.3s ease;
+    content: '+';
+    font-size: 1.2rem;
+    transition: transform 0.3s ease;
 }
 
 /* When open, change + to - */
 details[open] summary::after {
-  content: '−';
+    content: '−';
 }
 
 /* details[open] {
@@ -355,9 +359,9 @@ details[open] summary::after {
 } */
 
 details p {
-  margin-top: 10px;
-  font-size: 0.95rem;
-  line-height: 1.5;
+    margin-top: 10px;
+    font-size: 0.95rem;
+    line-height: 1.5;
 }
 
 /* end FAQ */
@@ -532,4 +536,189 @@ footer::before {
 
 .footer-right-box div {
     margin-top: 10px;
+}
+
+/* media */
+
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 30px;
+    height: 24px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+}
+
+.menu-toggle span {
+    display: block;
+    height: 3px;
+    border-radius: 2px;
+    background: black;
+}
+
+@media (max-width: 577px) {
+
+    header {
+        /* position: relative; */
+    }
+
+    .lang-box {
+        display: none;
+    }
+
+    /* show the hamburger */
+    .menu-toggle {
+        display: flex;
+        z-index: 20;
+    }
+
+    /* hide nav links by default */
+    nav ul {
+        height: 100vh;
+        position: absolute;
+        top: -75px;
+        left: 0;
+        right: 0;
+        background: rgba(255, 255, 255, 0.9);
+        flex-direction: column;
+        gap: 0;
+        overflow: hidden;
+        max-height: 0;
+        transition: max-height 0.3s ease-out;
+    }
+
+    nav ul li {
+        border-top: 1px solid #ddd;
+        padding: 12px 0;
+        text-align: center;
+    }
+
+    /* when nav has .open, expand it */
+    nav.open ul {
+        max-height: 300px;
+        /* enough to show all items */
+        transition: max-height 0.4s ease-in;
+    }
+
+
+    .bg-blur {
+        width: 100vw;
+        max-width: none;
+    }
+
+    .hero h1 {
+        font-size: 40px;
+        width: 90%;
+    }
+
+    .service-cards {
+        /* grid-template-columns: repeat(2, 1fr); */
+        /* grid-template-rows: repeat(2, 200px); */
+        display: grid;
+        grid-template-columns: 1fr;
+        /* one column */
+        grid-auto-rows: auto;
+        /* height grows to content */
+        gap: 1rem;
+        /* spacing between cards */
+        padding: 0 1rem;
+        /* optional side padding */
+    }
+
+    .service-cards .last,
+    .service-cards .bottom {
+        grid-column: auto !important;
+        grid-row: auto !important;
+    }
+
+    .services h2 {
+        text-align: center;
+    }
+
+    /* .last {
+        grid-row: 1 / span 2;
+        grid-column: 4;
+    }
+
+    .bottom {
+        grid-row: 2;
+        grid-column: 1 / span 2;
+    } */
+
+    .pricing {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .faq {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    .faq-content {
+        width: 90%;
+    }
+
+    .contact {
+        width: 80%;
+        padding: 0;
+        border-top: none;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+        width: 90%;
+        gap: 20px;
+    }
+
+    .footer-left-box {
+        align-items: center;
+        text-align: center;
+    }
+
+}
+
+@media (max-width: 769px) {
+    .card p {
+        font-size: 12px;
+    }
+
+    .service-cards {
+        gap: 15px;
+    }
+
+    .bg-abstract {
+        width: 90%;
+    }
+
+    .bg-blur {
+        width: 100vw;
+        max-width: 600px;
+    }
+
+    .faq-title {
+        font-size: 35px;
+    }
+
+    summary {
+        font-size: 1rem;
+    }
+
+    .footer-left-box p {
+        font-size: 12px;
+    }
+
+    .footer-right-box ul li a {
+        font-size: 12px;
+    }
+
+    .footer-content {
+        padding: 30px;
+    }
 }
