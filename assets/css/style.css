@@ -561,9 +561,7 @@ footer::before {
 
 @media (max-width: 577px) {
 
-    header {
-        /* position: relative; */
-    }
+   
 
     .lang-box {
         display: none;
