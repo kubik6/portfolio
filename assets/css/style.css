@@ -2,11 +2,29 @@ body {
     margin: 0;
     padding: 0;
     background-color: rgb(245, 248, 255);
+    font-family: "Noto Serif", serif;
 }
 
 header {
     text-align: center;
     padding-bottom: 170px;
+}
+
+.lang-menu-item {
+    display: none;
+}
+
+.lang-toggle span {
+    cursor: pointer;
+    font-weight: 600;
+    color: #888;
+    padding: 0 4px;
+    user-select: none;
+}
+
+.lang-toggle .active {
+    color: black;
+    text-decoration: underline;
 }
 
 .bg-blur {
@@ -54,9 +72,17 @@ nav ul {
     z-index: 10;
 }
 
+nav ul:hover {
+    background-color: rgba(255, 255, 255, 1);
+}
+
 nav ul li a {
     text-decoration: none;
     color: rgb(170, 164, 164);
+}
+
+nav ul li a:hover {
+    color: black;
 }
 
 
@@ -73,7 +99,7 @@ nav ul li a {
     width: 600px;
     line-height: 0.9;
     font-weight: 900;
-    font-size: 70px;
+    font-size: 63px;
     color: black;
 }
 
@@ -122,11 +148,24 @@ button {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    background: black;
-    color: white;
+    background: white;
+    color: black;
     padding: 1.5rem;
     border-radius: 10px;
     flex: 1 1 200px;
+}
+
+.card p {
+    font-size: 13px;
+}
+
+.card img {
+    width: 40px;
+    height: 40px;
+    padding: 7px;
+    border: none;
+    border-radius: 15px;
+    background-color: rgb(245, 248, 255);
 }
 
 /* portfolio section */
@@ -243,20 +282,20 @@ button {
 }
 
 .pricing-btn-box {
-    border: 1px solid black;
+    /* border: 1px solid black; */
     border-radius: 10px;
     padding: 1rem;
     text-align: center;
-    background-color: black;
-    color: white;
+    background-color: white;
+    color: black;
 }
 
 .pricing-main-box {
-    border: 1px solid black;
+    /* border: 1px solid black; */
     border-radius: 10px;
     padding: 1rem;
     text-align: left;
-    background-color: rgb(77 71 255);
+    background-color: white;
 
 }
 
@@ -271,7 +310,7 @@ button {
 }
 
 .pricing-price-box {
-    background-color: white;
+    background-color: rgb(245, 248, 255);
     border: none;
     border-radius: 10px;
     /* padding: 1rem; */
@@ -382,7 +421,7 @@ details p {
 
 .contact {
     /* height: 700px; */
-    border-top: 1px solid black;
+    /* border-top: 1px solid black; */
     /* width: 90%; */
     margin: auto;
     padding: 95px;
@@ -561,10 +600,19 @@ footer::before {
 
 @media (max-width: 577px) {
 
-   
-
-    .lang-box {
+    #lang-toggle-desktop {
         display: none;
+    }
+
+    .lang-menu-item {
+        display: block;
+        text-align: center;
+        padding-top: 10px;
+    }
+
+    .lang-menu-item .lang-toggle {
+        display: inline-block;
+        margin-top: 10px;
     }
 
     /* show the hamburger */
@@ -646,6 +694,11 @@ footer::before {
         grid-column: 1 / span 2;
     } */
 
+
+    .portfolio-title p {
+        font-size: 15px;
+    }
+
     .pricing {
         flex-direction: column;
         align-items: center;
@@ -684,7 +737,12 @@ footer::before {
 
 @media (max-width: 769px) {
     .card p {
-        font-size: 12px;
+        font-size: 10px;
+    }
+
+    .card img {
+        width: 30px;
+        height: 30px;
     }
 
     .service-cards {
@@ -709,11 +767,11 @@ footer::before {
     }
 
     .footer-left-box p {
-        font-size: 12px;
+        font-size: 10px;
     }
 
     .footer-right-box ul li a {
-        font-size: 12px;
+        font-size: 10px;
     }
 
     .footer-content {

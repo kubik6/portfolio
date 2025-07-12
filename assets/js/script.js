@@ -59,6 +59,38 @@ window.addEventListener('resize', () => updateCarousel(true));
 
 updateCarousel(true);
 
+// touch events for carousel
+let startX = 0;
+let endX = 0;
+
+carousel.addEventListener('touchstart', (e) => {
+  startX = e.touches[0].clientX;
+});
+
+carousel.addEventListener('touchmove', (e) => {
+  endX = e.touches[0].clientX;
+});
+
+carousel.addEventListener('touchend', () => {
+  const diffX = startX - endX;
+
+  // Only trigger if swipe is significant
+  if (Math.abs(diffX) > 50) {
+    if (diffX > 0) {
+      // Swiped left → move right
+      moveTo(1);
+    } else {
+      // Swiped right → move left
+      moveTo(-1);
+    }
+  }
+
+  // Reset
+  startX = 0;
+  endX = 0;
+});
+
+
 
 // faq 
 details.forEach((targetDetail) => {
@@ -97,3 +129,19 @@ document.addEventListener('click', (e) => {
     btn.setAttribute('aria-label', 'Open menu');
   }
 });
+
+
+// 
+
+document
+  .getElementById('contact-form')
+  .addEventListener('submit', async e => {
+    e.preventDefault();
+    const res = await fetch(e.target.action, {
+      method: 'POST',
+      body: new FormData(e.target),
+      headers: { 'Accept': 'application/json' }
+    });
+    if (res.ok) e.target.innerHTML = '<p>Message sent—thank you!</p>';
+    else alert('Error, please try again.');
+  });

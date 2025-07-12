@@ -1,6 +1,6 @@
 
 const translations = {
- "en": {
+  "en": {
     "title": "Web Agency",
   },
   "ru": {
@@ -21,16 +21,19 @@ function applyLocale(lang) {
     }
   });
 
+  document.querySelectorAll('.lang-toggle span').forEach(span => {
+    span.classList.toggle('active', span.dataset.lang === lang);
+  });
 }
 
-const langSelect = document.getElementById('lang-select');
 const initLang = localStorage.getItem('siteLang') || 'az';
-
-langSelect.value = initLang;
 applyLocale(initLang);
 
-langSelect.addEventListener('change', e => {
-  const newLang = e.target.value;
-  localStorage.setItem('siteLang', newLang);
-  applyLocale(newLang);
+document.querySelectorAll('.lang-toggle span').forEach(span => {
+  span.addEventListener('click', () => {
+    const selectedLang = span.dataset.lang;
+    localStorage.setItem('siteLang', selectedLang);
+    applyLocale(selectedLang);
+  });
 });
+

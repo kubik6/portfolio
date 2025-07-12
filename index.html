@@ -6,6 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title data-i18n="title">Web Agency</title>
     <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
 </head>
 
 <body>
@@ -24,12 +28,19 @@
                 <li><a href="#">About</a></li>
                 <li><a href="#">How it Works</a></li>
                 <li><a href="#">Services</a></li>
+                <!-- Mobile language toggle inside burger menu -->
+                <li class="lang-menu-item">
+                    <div id="lang-toggle-mobile" class="lang-toggle">
+                        <span data-lang="az">AZ</span> |
+                        <span data-lang="en">EN</span> |
+                        <span data-lang="ru">RU</span>
+                    </div>
+                </li>
             </ul>
-            <div class="lang-box">
-                <select id="lang-select">
-                    <option value="az">AZ</option>
-                    <option value="en">EN</option>
-                </select>
+            <div id="lang-toggle-desktop" class="lang-toggle">
+                <span data-lang="az" class="active">AZ</span> |
+                <span data-lang="en">EN</span> |
+                <span data-lang="ru">RU</span>
             </div>
         </nav>
         <div class="hero">
@@ -42,7 +53,7 @@
         <h2>What We Do</h2>
         <div class="service-cards">
             <div class="card">
-                <img src="assets/images/webDesign.png" alt="Web Design" />
+                <img src="assets/images/icons/sun.svg" alt="Web Design" />
                 <p>UI/UX Design</p>
                 <p>
                     From concept to launch, we create
@@ -52,8 +63,8 @@
                 </p>
             </div>
             <div class="card">
-                <img src="assets/images/webDevelopment.png" alt="Web Development" />
-                <p>Responsive Design</p>
+                <img src="assets/images/icons/star.svg" alt="UI" />
+                <p>UI/UX Design</p>
                 <p>
                     From concept to launch, we create
                     stunning, user-centric websites
@@ -62,7 +73,7 @@
                 </p>
             </div>
             <div class="card last">
-                <img src="" alt="E-commerce Solutions" />
+                <img src="assets/images/icons/bag.svg" alt="E-commerce Solutions" />
                 <p> E-commerce Solutions</p>
                 <p>
                     From concept to launch, we create
@@ -72,8 +83,26 @@
                 </p>
                 <img src="" alt="E-commerce Solutions picture">
             </div>
-            <div class="card">Text here</div>
-            <div class="card">Custom Development</div>
+            <div class="card">
+                <img src="assets/images/icons/pc.svg" alt="Web Development" />
+                <p>Responsive Design</p>
+                <p>
+                    From concept to launch, we create
+                    stunning, user-centric websites
+                    that elevate your brand and
+                    engage your audience.
+                </p>
+            </div>
+            <div class="card">
+                <img src="assets/images/icons/terminal.svg" alt="terminal" />
+                <p>Custom Development</p>
+                <p>
+                    From concept to launch, we create
+                    stunning, user-centric websites
+                    that elevate your brand and
+                    engage your audience.
+                </p>
+            </div>
             <div class="card bottom">
                 <img src="" alt="Webflow" />
                 <p> Webflow</p>
@@ -86,6 +115,25 @@
                 <img src="" alt="Webflow picture">
             </div>
         </div>
+    </section>
+
+    <section class="contact">
+        <img src="assets/images/abstract-contact.png" alt="abstract-contact" class="bg-abstract-contact"
+            draggable="false" />
+        <h2>Let’s Get in Touch</h2>
+        <form id="contact-form">
+            <label for="email">email</label>
+            <input id="email" type="email" name="email" placeholder="example@mail.com" required autocomplete="email" />
+
+            <label for="name">name</label>
+            <input id="name" type="text" name="name" placeholder="Full Name" required autocomplete="name" />
+
+            <label for="message">message</label>
+            <textarea id="message" name="message" placeholder="Write your message..." required
+                autocomplete="off"></textarea>
+
+            <button type="submit">Send</button>
+        </form>
     </section>
 
     <section class="portfolio">
@@ -105,9 +153,9 @@
 
         <div class="carousel-wrapper">
             <div class="carousel">
-                <div class="carousel-img"><img src="assets/images/secure.jpeg" alt="Secure" /></div>
-                <div class="carousel-img"><img src="assets/images/AR.png" alt="AR" /></div>
-                <div class="carousel-img"><img src="assets/images/support.png" alt="Support" /></div>
+                <div class="carousel-img"><img src="assets/images/secure.jpeg" alt="Secure" draggable="false" /></div>
+                <div class="carousel-img"><img src="assets/images/AR.png" alt="AR" draggable="false" /></div>
+                <div class="carousel-img"><img src="assets/images/support.png" alt="Support" draggable="false" /></div>
             </div>
         </div>
     </section>
@@ -168,25 +216,6 @@
             </details>
         </div>
 
-    </section>
-
-    <section class="contact">
-        <img src="assets/images/abstract-contact.png" alt="abstract-contact" class="bg-abstract-contact"
-            draggable="false" />
-        <h2>Let’s Get in Touch</h2>
-        <form id="contact-form">
-            <label for="email">email</label>
-            <input id="email" type="email" name="email" placeholder="example@mail.com" required autocomplete="email" />
-
-            <label for="name">name</label>
-            <input id="name" type="text" name="name" placeholder="Full Name" required autocomplete="name" />
-
-            <label for="message">message</label>
-            <textarea id="message" name="message" placeholder="Write your message..." required
-                autocomplete="off"></textarea>
-
-            <button type="submit">Send</button>
-        </form>
     </section>
 
     <footer>
