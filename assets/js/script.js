@@ -145,3 +145,20 @@ document
     if (res.ok) e.target.innerHTML = '<p>Message sent—thank you!</p>';
     else alert('Error, please try again.');
   });
+
+  // gsap animations
+  gsap.registerPlugin(ScrollTrigger);
+
+  gsap.utils.toArray('.reveal').forEach(section => {
+    gsap.from(section, {
+      opacity: 0,
+      y: 50,
+      duration: 1,
+      ease: "power2.out",
+      scrollTrigger: {
+        trigger: section,
+        start: "top 85%", // animation starts when section is near viewport
+        toggleActions: "play none none none"
+      }
+    });
+  });

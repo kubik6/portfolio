@@ -11,7 +11,7 @@ body {
 
 header {
     text-align: center;
-    padding-bottom: 170px;
+    padding-bottom: 2rem;
 }
 
 .lang-menu-item {
@@ -21,14 +21,13 @@ header {
 .lang-toggle span {
     cursor: pointer;
     font-weight: 600;
-    color: #888;
+    color: #9b9898;
     padding: 0 4px;
     user-select: none;
 }
 
 .lang-toggle .active {
     color: black;
-    text-decoration: underline;
 }
 
 .bg-blur {
@@ -57,36 +56,45 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding-bottom: 30px;
+    padding-bottom: 2rem;
 }
 
 nav ul {
     list-style: none;
     display: flex;
     align-items: center;
-    justify-content: center;
-    gap: 40px;
+    justify-content: space-between;
+    padding-left: 0;
     border: 2px solid white;
     border-radius: 20px;
-    padding: 20px;
-    background-color: rgba(255, 255, 255, 0.2);
-    backdrop-filter: blur(80px);
-    -webkit-backdrop-filter: blur(80px);
-    /* for Safari support */
+    padding: 0.7rem;
+    background-color: rgba(255, 255, 255, 1);
     z-index: 10;
 }
 
 nav ul:hover {
-    background-color: rgba(255, 255, 255, 1);
+    /* background-color: rgba(255, 255, 255, 1); */
+    background-color: transparent;
 }
 
 nav ul li a {
+    color: black;
     text-decoration: none;
-    color: rgb(170, 164, 164);
+}
+
+nav ul li {
+    padding: 0.5rem 0.7rem;
+    border-radius: 0.5rem;
+}
+
+nav ul li:hover {
+    background: linear-gradient(90deg, rgba(240, 138, 43, 0.2) 24%, rgba(240, 48, 179, 0.3) 50%, rgba(100, 12, 242, 0.4) 80%);
+    cursor: pointer;
 }
 
 nav ul li a:hover {
-    color: black;
+    color: rgb(108, 99, 99);
+
 }
 
 
@@ -98,7 +106,7 @@ nav ul li a:hover {
 
 .hero h1 {
     padding-top: 70px;
-    padding-bottom: 50px;
+    padding-bottom: 2rem;
     margin: auto;
     width: 700px;
     line-height: 1.2;
@@ -108,13 +116,12 @@ nav ul li a:hover {
 }
 
 button {
-    background: rgb(77 71 255);
+    background: black;
     color: white;
     padding: 0.7rem 1.5rem;
     border: none;
     border-radius: 8px;
     cursor: pointer;
-    margin-top: 1rem;
 }
 
 
@@ -336,8 +343,8 @@ button {
     width: 90%;
     margin: auto;
     padding: 2rem 0;
-    padding-top: 160px;
-    padding-bottom: 150px;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -409,7 +416,7 @@ details p {
 .bg-abstract-contact {
     position: absolute;
     top: 0;
-    right: -140px;
+    left: 300px;
     transform: translateX(-50%);
     width: 300px;
     height: 300px;
@@ -419,15 +426,39 @@ details p {
 }
 
 .contact {
-    /* height: 700px; */
-    /* border-top: 1px solid black; */
-    /* width: 90%; */
     margin: auto;
-    padding: 95px;
+    padding: 2rem;
     text-align: center;
     position: relative;
     padding-bottom: 0;
+}
 
+.contact-box {
+    width: 90%;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.contact-box-left {
+    width: 50%;
+    text-align: left;
+}
+
+.contact-box-left p {
+    font-size: 1rem;
+    color: black;
+    margin-bottom: 20px;
+    width: 80%;
+}
+
+.contact-box-right {
+    width: 50%;
+    border: 2px solid white;
+    border-radius: 20px;
+    background-color: white;
+    padding: 1rem;
 }
 
 .contact h2 {
@@ -464,10 +495,10 @@ details p {
 }
 
 #contact-form button {
-    background: rgb(47, 140, 226);
+    background: black;
     color: white;
     width: 100%;
-    max-width: 600px;
+    max-width: 631px;
     padding: 0.7rem 1.5rem;
     border: none;
     border-radius: 8px;
@@ -478,7 +509,7 @@ details p {
 /* end contact  */
 
 footer {
-    height: 600px;
+    height: 500px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -639,6 +670,7 @@ footer::before {
         border-top: 1px solid #ddd;
         padding: 12px 0;
         text-align: center;
+        border: none;
     }
 
     /* when nav has .open, expand it */
@@ -647,6 +679,15 @@ footer::before {
         /* enough to show all items */
         transition: max-height 0.4s ease-in;
     }
+
+    nav ul li:hover {
+        background: none;
+    }
+
+    nav ul:hover {
+        background-color: rgba(255, 255, 255, 0.9);
+    }
+
 
 
     .bg-blur {
@@ -742,6 +783,17 @@ footer::before {
     .card img {
         width: 30px;
         height: 30px;
+    }
+
+    .contact-box {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .contact-box-left,
+    .contact-box-right {
+        width: 100%;
+        text-align: center;
     }
 
     .service-cards {

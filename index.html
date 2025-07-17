@@ -29,15 +29,15 @@
                 <li><a data-i18n="service" href="#services">Services</a></li>
                 <li class="lang-menu-item">
                     <div id="lang-toggle-mobile" class="lang-toggle">
-                        <span data-lang="az">AZ</span> |
-                        <span data-lang="en">EN</span> |
+                        <span data-lang="az">AZ</span>
+                        <span data-lang="en">EN</span>
                         <span data-lang="ru">RU</span>
                     </div>
                 </li>
             </ul>
             <div id="lang-toggle-desktop" class="lang-toggle">
-                <span data-lang="az" class="active">AZ</span> |
-                <span data-lang="en">EN</span> |
+                <span data-lang="az" class="active">AZ</span>
+                <span data-lang="en">EN</span>
                 <span data-lang="ru">RU</span>
             </div>
         </nav>
@@ -47,7 +47,7 @@
         </div>
     </header>
 
-    <section class="services" id="services">
+    <section class="services reveal" id="services">
         <h2 data-i18n="what_we_do">What We Do</h2>
         <div class="service-cards">
             <div class="card">
@@ -115,26 +115,42 @@
         </div>
     </section>
 
-    <section class="contact">
-        <img src="assets/images/abstract-contact.png" alt="abstract-contact" class="bg-abstract-contact"
-            draggable="false" />
-        <h2 data-i18n="get_in_touch">Let’s Get in Touch</h2>
-        <form id="contact-form">
-            <label data-i18n="email" for="email">email</label>
-            <input id="email" type="email" name="email" placeholder="example@mail.com" required autocomplete="email" />
+    <section class="contact reveal" id="about">
 
-            <label data-i18n="name" for="name">name</label>
-            <input id="name" type="text" name="name" placeholder="Full Name" required autocomplete="name" />
+        <div class="contact-box">
 
-            <label data-i18n="message" for="message">message</label>
-            <textarea id="message" name="message" placeholder="Write your message..." required
-                autocomplete="off"></textarea>
+            <div class="contact-box-left">
+                <img src="assets/images/abstract-contact.png" alt="abstract-contact" class="bg-abstract-contact"
+                    draggable="false" />
+                <h2 data-i18n="about_us">About Us</h2>
+                <p data-i18n="about_description">
+                    We are a passionate team of designers and developers dedicated to creating
+                    exceptional digital experiences. Our mission is to help businesses thrive online
+                    through innovative design and cutting-edge technology.
+                </p>
+            </div>
+            <div class="contact-box-right">
 
-            <button data-i18n="send" type="submit">Send</button>
-        </form>
+                <h2 data-i18n="get_in_touch">Let’s Get in Touch</h2>
+                <form id="contact-form">
+                    <label data-i18n="email" for="email">email</label>
+                    <input id="email" type="email" name="email" placeholder="example@mail.com" required
+                        autocomplete="email" />
+
+                    <label data-i18n="name" for="name">name</label>
+                    <input id="name" type="text" name="name" placeholder="Full Name" required autocomplete="name" />
+
+                    <label data-i18n="message" for="message">message</label>
+                    <textarea id="message" name="message" placeholder="Write your message..." required
+                        autocomplete="off"></textarea>
+
+                    <button data-i18n="send" type="submit">Send</button>
+                </form>
+            </div>
+        </div>
     </section>
 
-    <section class="portfolio">
+    <section class="portfolio reveal">
         <img src="assets/images/abstract.png" alt="Portfolio Background" class="bg-abstract" draggable="false" />
 
         <div class="portfolio-header">
@@ -158,7 +174,7 @@
         </div>
     </section>
 
-    <section class="pricing">
+    <section class="pricing reveal">
         <div class="pricing-header">
             <div class="pricing-header-box">
                 <h2 data-i18n="pricing">Pricing</h2>
@@ -195,7 +211,7 @@
         </div>
     </section>
 
-    <section class="faq" id="work">
+    <section class="faq reveal" id="work">
         <div class="faq-title">
             <h2 data-i18n="faq">Frequently Asked Questions</h2>
         </div>
@@ -219,7 +235,7 @@
     </section>
 
     <footer>
-        <div class="footer-content">
+        <div class="footer-content reveal">
             <div class="footer-left-box">
                 <h3>Logo</h3>
                 <p data-i18n="footer_description">Ready to elevate your online presence?
@@ -239,8 +255,11 @@
         </div>
     </footer>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     <script src="assets/js/script.js"></script>
     <script src="assets/js/i18n.js"></script>
+
 </body>
 
 </html>
