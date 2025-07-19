@@ -21,6 +21,7 @@
                 <span></span>
                 <span></span>
                 <span></span>
+                <span></span>
             </button>
             <ul>
                 <li><a data-i18n="home" href="#home">Home</a></li>
@@ -43,7 +44,7 @@
         </nav>
         <div class="hero" id="home">
             <h1 data-i18n="main">Awesome UI Dark Template for Webflow Agency</h1>
-            <button>Get in Touch</button>
+            <button><a href="#about">Get in Touch</a></button>
         </div>
     </header>
 
@@ -79,7 +80,9 @@
                     that elevate your brand and
                     engage your audience.
                 </p>
-                <img src="" alt="E-commerce Solutions picture">
+                <div class="card-img">
+                    <img src="assets/images/2.jpg" alt="E-commerce Solutions picture">
+                </div>
             </div>
             <div class="card">
                 <img src="assets/images/icons/pc.svg" alt="Web Development" />
@@ -102,15 +105,23 @@
                 </p>
             </div>
             <div class="card bottom">
-                <img src="" alt="Webflow" />
-                <p> Webflow</p>
-                <p>
-                    From concept to launch, we create
-                    stunning, user-centric websites
-                    that elevate your brand and
-                    engage your audience.
-                </p>
-                <img src="" alt="Webflow picture">
+                <div class="bottom-box">
+                    <div>
+                        <img src="assets/images/icons/terminal.svg" alt="Webflow" />
+                        <p> Webflow</p>
+                        <p>
+                            From concept to launch, we create
+                            stunning, user-centric websites
+                            that elevate your brand and
+                            engage your audience.
+                        </p>
+                    </div>
+                    <div class="card-img-bottom">
+                        <img src="assets/images/1.jpg" alt="Webflow picture">
+                    </div>
+                </div>
+
+
             </div>
         </div>
     </section>
@@ -120,8 +131,8 @@
         <div class="contact-box">
 
             <div class="contact-box-left">
-                <img src="assets/images/abstract-contact.png" alt="abstract-contact" class="bg-abstract-contact"
-                    draggable="false" />
+                <!-- <img src="assets/images/abstract-contact.png" alt="abstract-contact" class="bg-abstract-contact" -->
+                    <!-- draggable="false" /> -->
                 <h2 data-i18n="about_us">About Us</h2>
                 <p data-i18n="about_description">
                     We are a passionate team of designers and developers dedicated to creating
@@ -151,7 +162,7 @@
     </section>
 
     <section class="portfolio reveal">
-        <img src="assets/images/abstract.png" alt="Portfolio Background" class="bg-abstract" draggable="false" />
+        <!-- <img src="assets/images/abstract.png" alt="Portfolio Background" class="bg-abstract" draggable="false" /> -->
 
         <div class="portfolio-header">
             <div class="arrow left-arrow">&#8592;</div>
