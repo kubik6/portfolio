@@ -11,7 +11,7 @@ body {
 
 header {
     text-align: center;
-    padding-bottom: 2rem;
+    padding-bottom: 4rem;
 }
 
 .lang-menu-item {
@@ -108,13 +108,13 @@ nav ul li:hover {
 }
 
 .hero h1 {
+    width: 90%;
     padding-top: 70px;
     padding-bottom: 2rem;
     margin: auto;
-    width: 700px;
     line-height: 1.2;
     font-weight: 900;
-    font-size: 63px;
+    font-size: 3rem;
     color: black;
 }
 
@@ -127,12 +127,16 @@ button {
     cursor: pointer;
 }
 
+button a {
+    text-decoration: none;
+    color: white;
+}
 
 /* sevice section */
 
 .services {
     width: 90%;
-    margin: auto;
+    margin: 2rem auto;
 }
 
 .services h2 {
@@ -144,7 +148,7 @@ button {
 .service-cards {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(2, 250px);
+    grid-template-rows: auto;
     gap: 40px;
 }
 
@@ -170,7 +174,7 @@ button {
 }
 
 .card p {
-    font-size: 1rem;
+    font-size: 0.9rem;
 }
 
 .card img {
@@ -192,9 +196,12 @@ button {
     height: 100%;
 }
 
+.card-img-top {
+    width: fit-content;
+}
+
 .card-img-bottom {
     width: 50%;
-    height: 50%;
 }
 
 .card-img-bottom img {
@@ -241,7 +248,7 @@ button {
 .carousel-wrapper {
     overflow: hidden;
     width: 100%;
-    padding: 0 10%;
+    padding: 0;
     box-sizing: border-box;
 }
 
@@ -252,14 +259,13 @@ button {
 }
 
 .carousel>div {
-    flex: 0 0 80%;
-    max-width: 50%;
+    flex: 0 0 100%;
+    max-width: 100%;
 }
 
 .carousel-img {
     width: 300px;
     height: 500px;
-    /* border: 30px solid black; */
     border-radius: 10px;
 }
 
@@ -373,7 +379,7 @@ button {
     padding-bottom: 2rem;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
 }
 
 .faq-title {
@@ -384,10 +390,7 @@ button {
 }
 
 .faq-content {
-    /* max-width: 600px; */
     width: 50%;
-    margin: auto;
-
 }
 
 details {
@@ -535,6 +538,56 @@ details p {
 
 /* end contact  */
 
+/* how it work area */
+
+.work {
+    width: 90%;
+    margin: auto;
+    padding: 2rem 0;
+    text-align: center;
+}
+
+.work-header {
+    padding: 2rem 0;
+}
+
+.work-steps {
+    width: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+}
+
+.step {
+    /* background-color: white; */
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0 10px;
+    padding: 1rem;
+    text-align: center;
+    font-size: 0.7rem;
+}
+
+.step img {
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+}
+
+.line {
+    width: 300px;
+    height: 1px;
+    background-color: black;
+    margin: 4% 1%;
+    align-self: flex-start;
+}
+
+/* end how it work area */
+
 footer {
     height: 500px;
     display: flex;
@@ -657,6 +710,11 @@ footer::before {
 
 @media (max-width: 577px) {
 
+    .hero h1 {
+        font-size: 2rem;
+        padding-top: 50px;
+    }
+
     #lang-toggle-desktop {
         display: none;
     }
@@ -715,16 +773,9 @@ footer::before {
         background-color: rgba(255, 255, 255, 0.9);
     }
 
-
-
     .bg-blur {
         width: 100vw;
         max-width: none;
-    }
-
-    .hero h1 {
-        font-size: 40px;
-        width: 90%;
     }
 
     .service-cards {
@@ -772,10 +823,16 @@ footer::before {
         gap: 20px;
     }
 
-    .faq {
+    .work-steps {
         flex-direction: column;
         align-items: center;
-        width: 100%;
+    }
+
+    .line {
+        width: 50px;
+        height: 1px;
+        margin: 10% auto !important;
+        rotate: 90deg;
     }
 
     .faq-content {
@@ -807,9 +864,8 @@ footer::before {
         font-size: 10px;
     }
 
-    .card img {
-        width: 30px;
-        height: 30px;
+    #contact-form {
+        width: 90%;
     }
 
     .contact-box {
@@ -820,7 +876,10 @@ footer::before {
     .contact-box-left,
     .contact-box-right {
         width: 100%;
-        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
     }
 
     .service-cards {
@@ -836,8 +895,27 @@ footer::before {
         max-width: 600px;
     }
 
+    .line {
+        margin: 10% 1%;
+    }
+
+    .faq {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
     .faq-title {
+        width: 80%;
+        text-align: center;
+        max-width: none;
         font-size: 35px;
+    }
+
+    .faq-content {
+        width: 90%;
+        max-width: none;
+        margin: auto;
     }
 
     summary {
@@ -854,5 +932,13 @@ footer::before {
 
     .footer-content {
         padding: 30px;
+    }
+}
+
+@media (min-width: 768px) {
+    .carousel>div {
+        /* each slide takes half the carousel’s inner width, minus gap adjustments */
+        flex: 0 0 calc(50% - 8px);
+        max-width: calc(50% - 8px);
     }
 }

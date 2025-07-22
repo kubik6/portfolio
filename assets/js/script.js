@@ -8,7 +8,7 @@ const navLinks = nav.querySelectorAll('ul li a');
 
 const details = document.querySelectorAll('.faq-content details');
 
-const slideGap = 16;
+const slideGap = 0.2 * parseFloat(getComputedStyle(document.documentElement).fontSize);
 
 let index = 1;
 let isAnimating = false;
@@ -41,16 +41,21 @@ function moveTo(direction) {
   carousel.addEventListener('transitionend', () => {
     if (index === totalItems - 1) {
       index = 1;
-      updateCarousel(true);
     } else if (index === 0) {
       index = totalItems - 2;
-      updateCarousel(true);
+    } else {
+      isAnimating = false;
+      return;
     }
 
-    setTimeout(() => {
-      isAnimating = false;
-    }, 20);
-  }, { once: true });
+    carousel.style.transition = 'none';
+    const offset = index * getSlideWidth();
+    carousel.style.transform = `translateX(-${offset}px)`;
+    void carousel.offsetWidth;
+    carousel.style.transition = 'transform 0.5s ease';
+    isAnimating = false;
+  });
+
 }
 
 leftArrow.addEventListener('click', () => moveTo(-1));
@@ -146,19 +151,19 @@ document
     else alert('Error, please try again.');
   });
 
-  // gsap animations
-  gsap.registerPlugin(ScrollTrigger);
+// gsap animations
+gsap.registerPlugin(ScrollTrigger);
 
-  gsap.utils.toArray('.reveal').forEach(section => {
-    gsap.from(section, {
-      opacity: 0,
-      y: 50,
-      duration: 1,
-      ease: "power2.out",
-      scrollTrigger: {
-        trigger: section,
-        start: "top 85%", // animation starts when section is near viewport
-        toggleActions: "play none none none"
-      }
-    });
+gsap.utils.toArray('.reveal').forEach(section => {
+  gsap.from(section, {
+    opacity: 0,
+    y: 50,
+    duration: 1,
+    ease: "power2.out",
+    scrollTrigger: {
+      trigger: section,
+      start: "top 85%", // animation starts when section is near viewport
+      toggleActions: "play none none none"
+    }
   });
+});
