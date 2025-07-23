@@ -703,6 +703,7 @@ footer::before {
 }
 
 .menu-toggle span {
+    width: 100%;
     display: block;
     height: 3px;
     border-radius: 2px;
@@ -734,7 +735,7 @@ footer::before {
     /* show the hamburger */
     .menu-toggle {
         display: flex;
-        z-index: 20;
+        z-index: 2;
     }
 
     /* hide nav links by default */
