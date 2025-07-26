@@ -187,31 +187,41 @@ button a {
     background-color: rgb(245, 248, 255);
 }
 
-.card-img {
-    width: 100%;
-    height: 100%;
-}
 
-.card-img img {
+/* .card-img img {
     width: 100%;
     height: 100%;
 }
 
 .card-img-top {
     width: fit-content;
+} */
+
+.card-img {
+    width: 18rem;
+    min-width: 200px;
+    height: 18rem;
 }
 
 .card-img-bottom {
-    width: 50%;
+    width: 15rem;
+    max-width: 300px;
+    height: 15rem;
+    flex-shrink: 0;
+    padding-top: 2rem;
 }
 
-.card-img-bottom img {
+.card-img-bottom img,
+.card-img img {
     width: 100%;
     height: 100%;
+    object-fit: fill;
 }
 
 .bottom-box {
     display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 /* portfolio section */
@@ -652,12 +662,12 @@ footer::before {
 
 .footer-left-box p {
     text-align: left;
-    font-size: 16px;
+    font-size: 1rem;
     color: black;
+    width: 80%;
 }
 
 .footer-right-box {
-    flex: 1;
     text-align: right;
 }
 
@@ -710,6 +720,174 @@ footer::before {
     background: black;
 }
 
+@media (max-width: 1025px) {
+
+    .card-img {
+        height: 14rem;
+    }
+
+    .card-img-bottom {
+        width: 10rem;
+        height: 10rem;
+    }
+
+    #contact-form {
+        width: 90%;
+    }
+
+    .contact-box {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .contact-box-left,
+    .contact-box-right {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .service-cards {
+        grid-template-columns: repeat(3, 1fr);
+        grid-auto-rows: auto;
+    }
+
+    .last {
+        grid-column: 1 / -1;
+        grid-row: auto;
+        order: 1;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .bottom-box {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .footer-left-box p {
+        font-size: 0.8rem;
+    }
+
+}
+
+@media (max-width: 769px) {
+    .card p {
+        font-size: 10px;
+    }
+
+    .card-img {
+        height: 14rem;
+    }
+
+    .card-img-bottom {
+        width: 10rem;
+        height: 10rem;
+    }
+
+    #contact-form {
+        width: 90%;
+    }
+
+    .contact-box {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .contact-box-left,
+    .contact-box-right {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .service-cards {
+        grid-template-columns: repeat(3, 1fr);
+        grid-auto-rows: auto;
+    }
+
+    .last {
+        grid-column: 1 / -1;
+        grid-row: auto;
+        order: 1;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .bottom-box {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .bg-abstract {
+        width: 90%;
+    }
+
+    .bg-blur {
+        width: 100vw;
+        max-width: 600px;
+    }
+
+    .line {
+        margin: 10% 1%;
+    }
+
+    .faq {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    .faq-title {
+        width: 80%;
+        text-align: center;
+        max-width: none;
+        font-size: 35px;
+    }
+
+    .faq-content {
+        width: 90%;
+        max-width: none;
+        margin: auto;
+    }
+
+    summary {
+        font-size: 1rem;
+    }
+
+    .footer-left-box p {
+        font-size: 10px;
+    }
+
+    .footer-right-box ul li a {
+        font-size: 10px;
+    }
+
+    .footer-content {
+        padding: 30px;
+    }
+}
+
+@media (min-width: 768px) {
+    .carousel>div {
+        /* each slide takes half the carousel’s inner width, minus gap adjustments */
+        flex: 0 0 calc(50% - 8px);
+        max-width: calc(50% - 8px);
+    }
+}
+
 @media (max-width: 577px) {
 
     .hero h1 {
@@ -735,14 +913,14 @@ footer::before {
     /* show the hamburger */
     .menu-toggle {
         display: flex;
-        z-index: 2;
+        z-index: 20;
     }
 
     /* hide nav links by default */
     nav ul {
         height: 100vh;
         position: absolute;
-        top: -75px;
+        top: -30px;
         left: 0;
         right: 0;
         background: rgba(255, 255, 255, 0.9);
@@ -773,6 +951,11 @@ footer::before {
 
     nav ul:hover {
         background-color: rgba(255, 255, 255, 0.9);
+    }
+
+    .card-img-bottom {
+        width: 12rem !important;
+        height: 12rem !important;
     }
 
     .bg-blur {
@@ -872,104 +1055,5 @@ footer::before {
 
 }
 
-@media (max-width: 769px) {
-    .card p {
-        font-size: 10px;
-    }
 
-    #contact-form {
-        width: 90%;
-    }
 
-    .contact-box {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .contact-box-left,
-    .contact-box-right {
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-    }
-
-    .service-cards {
-        grid-template-columns: repeat(3, 1fr);
-        grid-auto-rows: auto;
-    }
-
-    .last {
-        grid-column: 1 / -1;
-        grid-row: auto;
-        order: 1;
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: center;
-    }
-
-    .bottom-box {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: center;
-    }
-
-    .bg-abstract {
-        width: 90%;
-    }
-
-    .bg-blur {
-        width: 100vw;
-        max-width: 600px;
-    }
-
-    .line {
-        margin: 10% 1%;
-    }
-
-    .faq {
-        flex-direction: column;
-        align-items: center;
-        width: 100%;
-    }
-
-    .faq-title {
-        width: 80%;
-        text-align: center;
-        max-width: none;
-        font-size: 35px;
-    }
-
-    .faq-content {
-        width: 90%;
-        max-width: none;
-        margin: auto;
-    }
-
-    summary {
-        font-size: 1rem;
-    }
-
-    .footer-left-box p {
-        font-size: 10px;
-    }
-
-    .footer-right-box ul li a {
-        font-size: 10px;
-    }
-
-    .footer-content {
-        padding: 30px;
-    }
-}
-
-@media (min-width: 768px) {
-    .carousel>div {
-        /* each slide takes half the carousel’s inner width, minus gap adjustments */
-        flex: 0 0 calc(50% - 8px);
-        max-width: calc(50% - 8px);
-    }
-}

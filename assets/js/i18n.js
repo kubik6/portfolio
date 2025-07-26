@@ -32,9 +32,21 @@ const translations = {
     "pricing": "Pricing",
     "pricing_description": "Explore our transparent pricing plans and find the perfect package for your budget and goals.",
     "services": "Unlimited Services",
+    "step_1": "Step 1: Idea",
+    "step_1_description": "We start with a detailed consultation to understand your business needs, goals, and vision. This helps us create a tailored strategy that aligns with your objectives.",
+    "step_2": "Step 2: Design",
+    "step_2_description": "Next, we design a unique and engaging website layout that reflects your brand identity. We focus on user experience to ensure your site is intuitive and easy to navigate.",
+    "step_3": "Step 3: Development",
+    "step_3_description": "After the design is approved, we develop the website using the latest technologies. We ensure it is responsive, fast, and optimized for search engines.",
+    "step_4": "Step 4: Deploy",
+    "step_4_description": "Once the site is ready, we conduct thorough testing to ensure everything works perfectly. We check for compatibility across devices and browsers, ensuring a seamless user experience.",
     "services_description": "From design and development to ongoing support, enjoy unlimited access to our full suite of professional services.",
     "faq": "Frequently Asked Questions",
-    "footer_description": "Ready to elevate your online presence? Contact us today to discuss your project and discover how we can bring your vision to life."
+    "footer_description": "Ready to elevate your online presence? Contact us today to discuss your project and discover how we can bring your vision to life.",
+    "rights": "© 2025 All rights reserved.",
+    "placeholder_name": "Enter your name",
+    "placeholder_email": "Enter your email",
+    "placeholder_text": "Write your message"
   },
   "ru": {
     "title": "Веб‑Агентство",
@@ -68,9 +80,21 @@ const translations = {
     "pricing": "Цены",
     "pricing_description": "Изучите наши прозрачные тарифные планы и выберите оптимальный пакет под ваш бюджет и задачи.",
     "services": "Неограниченный спектр услуг",
+    "step_1": "Шаг 1: Идея",
+    "step_1_description": "Мы начинаем с понимания вашей идеи и требований.",
+    "step_2": "Шаг 2: Дизайн",
+    "step_2_description": "Наши дизайнеры создают впечатляющие визуальные решения, соответствующие стилю вашего бренда.",
+    "step_3": "Шаг 3: Разработка",
+    "step_3_description": "Мы создаём ваш сайт с использованием современных технологий для обеспечения максимальной производительности.",
+    "step_4": "Шаг 4: Запуск",
+    "step_4_description": "После тестирования мы запускаем проект в работу — предоставляя готовый, отточенный продукт.",
     "services_description": "От дизайна и разработки до технической поддержки — получите полный набор профессиональных услуг без ограничений.",
     "faq": "Часто задаваемые вопросы",
-    "footer_description": "Готовы вывести своё присутствие в интернете на новый уровень? Свяжитесь с нами сегодня, чтобы обсудить проект и узнать, как мы воплотим вашу идею в жизнь."
+    "footer_description": "Готовы вывести своё присутствие в интернете на новый уровень? Свяжитесь с нами сегодня, чтобы обсудить проект и узнать, как мы воплотим вашу идею в жизнь.",
+    "rights": "© 2025 Все права защищены.",
+    "placeholder_name": "Введите ваше имя",
+    "placeholder_email": "Введите ваш email",
+    "placeholder_text": "Напишите ваше сообщение"
   },
   "az": {
     "title": "Web Agentliyi",
@@ -105,8 +129,20 @@ const translations = {
     "pricing_description": "Şəffaf qiymət planlarımızı araşdırın və büdcənizə ən uyğun paketi seçin.",
     "services": "Məhdudiyyətsiz Xidmətlər",
     "services_description": "Dizayndan inkişafına və davamlı dəstəyə qədər peşəkar xidmətlərimizin tam spektrini məhdudiyyətsiz əldə edin.",
+    "step_1": "Addım 1: İdeya",
+    "step_1_description": "İlk olaraq məqsədlərinizi və gözləntilərinizi öyrənirik.",
+    "step_2": "Addım 2: Dizayn",
+    "step_2_description": "Dizaynerlərimiz brendinizə uyğun cəlbedici və peşəkar vizual həllər yaradır.",
+    "step_3": "Addım 3: İnkişaf",
+    "step_3_description": "Saytınızın yüksək performansı üçün ən son texnologiyalardan istifadə edərik.",
+    "step_4": "Addım 4: Yayımlama",
+    "step_4_description": "Sınaqları tamamladıqdan sonra layihəni istifadəyə veririk — tam təkmilləşdirilmiş məhsul sizin istifadənizə təqdim olunur ki",
     "faq": "Tez‑tez Verilən Suallar",
-    "footer_description": "Onlayn mövcudluğunuzu növbəti səviyyəyə qaldırmağa hazırsınız? Layihənizi müzakirə etmək və ideyanızı həyata keçirmək yollarını öyrənmək üçün bu gün bizimlə əlaqə saxlayın."
+    "footer_description": "Onlayn mövcudluğunuzu növbəti səviyyəyə qaldırmağa hazırsınız? Layihənizi müzakirə etmək və ideyanızı həyata keçirmək yollarını öyrənmək üçün bu gün bizimlə əlaqə saxlayın.",
+    "rights": "© 2025 Bütün hüquqlar qorunur.",
+    "placeholder_name": "Adınızı daxil edin",
+    "placeholder_email": "E‑poçtunuzu daxil edin",
+    "placeholder_text": "Mesajınızı yazın"
   }
 };
 
@@ -121,9 +157,18 @@ function applyLocale(lang) {
     }
   });
 
+  //  Update placeholders
+  document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+    const key = el.getAttribute('data-i18n-placeholder');
+    if (key && dict[key]) {
+      el.placeholder = dict[key];
+    }
+  });
+
   document.querySelectorAll('.lang-toggle span').forEach(span => {
     span.classList.toggle('active', span.dataset.lang === lang);
   });
+
 }
 
 const initLang = localStorage.getItem('siteLang') || 'az';
