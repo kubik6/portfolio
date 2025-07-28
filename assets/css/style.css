@@ -310,76 +310,6 @@ button a {
 
 /* end portfolio section */
 
-/* pricing area*/
-
-.pricing {
-    width: 90%;
-    margin: auto;
-    display: flex;
-    /* align-items: center; */
-    justify-content: center;
-    gap: 20px;
-    text-align: left;
-    padding: 2rem 0;
-    padding-top: 50px;
-}
-
-.pricing-header-box {
-    width: 100%;
-    max-width: 250px;
-}
-
-.pricing-header-box h2 {
-    font-size: 60px;
-    color: black;
-    margin-bottom: 20px;
-}
-
-.pricing-btn-box {
-    /* border: 1px solid black; */
-    border-radius: 10px;
-    padding: 1rem;
-    text-align: center;
-    background-color: white;
-    color: black;
-}
-
-.pricing-main-box {
-    /* border: 1px solid black; */
-    border-radius: 10px;
-    padding: 1rem;
-    text-align: left;
-    background-color: white;
-
-}
-
-.pricing-options {
-    display: flex;
-    justify-content: left;
-    gap: 60px;
-}
-
-.pricing-options ul li {
-    margin-bottom: 20px;
-}
-
-.pricing-price-box {
-    background-color: rgb(245, 248, 255);
-    border: none;
-    border-radius: 10px;
-    /* padding: 1rem; */
-}
-
-.pricing-price-box h3 {
-    font-size: 40px;
-    color: black;
-    text-align: left;
-    padding: 20px;
-    margin: 0;
-}
-
-/* end pricing area  */
-
 /* FAQ */
 
 .faq {
@@ -880,13 +810,12 @@ footer::before {
     }
 }
 
-@media (min-width: 768px) {
+/* @media (min-width: 768px) {
     .carousel>div {
-        /* each slide takes half the carousel’s inner width, minus gap adjustments */
         flex: 0 0 calc(50% - 8px);
         max-width: calc(50% - 8px);
     }
-}
+} */
 
 @media (max-width: 577px) {
 
@@ -953,9 +882,14 @@ footer::before {
         background-color: rgba(255, 255, 255, 0.9);
     }
 
+    .card-img {
+        width: 14rem;
+        height: 14rem;
+    }
+
     .card-img-bottom {
-        width: 12rem !important;
-        height: 12rem !important;
+        width: 12rem;
+        height: 12rem;
     }
 
     .bg-blur {
@@ -1013,12 +947,6 @@ footer::before {
         font-size: 15px;
     }
 
-    .pricing {
-        flex-direction: column;
-        align-items: center;
-        gap: 20px;
-    }
-
     .work-steps {
         flex-direction: column;
         align-items: center;
@@ -1029,6 +957,14 @@ footer::before {
         height: 1px;
         margin: 10% auto !important;
         rotate: 90deg;
+    }
+
+    .carousel-img {
+        height: auto;
+    }
+
+    .carousel img {
+        object-fit: cover;
     }
 
     .faq-content {
@@ -1054,6 +990,3 @@ footer::before {
     }
 
 }
-
-
-
